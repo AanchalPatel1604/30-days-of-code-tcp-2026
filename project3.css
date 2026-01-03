@@ -1,0 +1,128 @@
+/* --- Global Styles --- */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333;
+}
+
+header {
+    background: #6224e7; /* Primary blue color */
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 0.25em;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    color: #8a35f2;
+    border-bottom: 2px solid #a638ef;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+/* --- Specific Element Styles --- */
+
+/* Profile Image */
+img {
+    display: block;
+    border-radius: 50%; /* Makes the image circular */
+    border: 5px solid #a933f2;
+    margin: 10px 0 20px 0;
+}
+
+/* Skills List */
+ul {
+    list-style-type: none; /* Removes default bullet points */
+    padding: 0;
+}
+
+li {
+    background-color: #e9ecef;
+    padding: 8px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: inline-block; /* Makes skills tags look like buttons */
+    margin-right: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Projects */
+article {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* Quote */
+blockquote {
+    background: #f8f9fa;
+    border-left: 5px solid #5f26ef;
+    margin: 1.5em 0;
+    padding: 1em 20px;
+    color: #555;
+    font-style: italic;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background: #333;
+    color: white;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #932de6;
+    text-decoration: none;
+}
