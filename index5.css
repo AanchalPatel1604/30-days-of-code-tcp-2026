@@ -1,0 +1,127 @@
+:root {
+  --bg: #050816;
+  --cell: #0d102f;
+  --x: #00f6ff;
+  --o: #ff2a6d;
+  --draw: #f9c74f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #10144a, var(--bg));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  width: 340px;
+}
+
+h1 {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 32px;
+  filter: invert(1);
+}
+
+#status {
+  margin: 15px 0;
+  min-height: 28px;
+}
+
+/* Board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.cell {
+  height: 100px;
+  background: var(--cell);
+  border-radius: 12px;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+/* Marks */
+.cell.x {
+  color: var(--x);
+  animation: pop 0.25s ease-out;
+}
+
+.cell.o {
+  color: var(--o);
+  animation: pop 0.25s ease-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+/* End States */
+.win {
+  color: var(--x);
+  animation: glow 1s infinite alternate;
+}
+
+.loss {
+  color: var(--o);
+  animation: shake 0.4s;
+}
+
+.draw {
+  color: var(--draw);
+  animation: fade 1.2s infinite;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px currentColor; }
+  to { text-shadow: 0 0 25px currentColor; }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes fade {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #00f6ff, #9d4edd);
+  font-family: inherit;
+  cursor: pointer;
+}
