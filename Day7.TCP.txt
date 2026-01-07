@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int sumOfEncryptedInt(vector<int>& nums) {
+        int sum = 0;
+
+        for (int num : nums) {
+            string s = to_string(num);
+            char maxDigit = '0';
+
+            // Find maximum digit
+            for (char c : s) {
+                if (c > maxDigit) {
+                    maxDigit = c;
+                }
+            }
+
+            // Create encrypted number
+            string encrypted(s.length(), maxDigit);
+            sum += stoi(encrypted);
+        }
+
+        return sum;
+    }
+};
+
