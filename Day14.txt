@@ -1,0 +1,10 @@
+int count = 0;
+        while (n) {
+            n &= (n - 1); // remove lowest set bit
+            count++;
+        }
+        return count;
+    }
+};
+
+        
