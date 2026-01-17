@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int countGoodNumbers(long long n) {
+        const long long MOD = 1e9 + 7;
+        
+        long long even_positions = (n + 1) / 2; // positions 0,2,4,...
+        long long odd_positions = n / 2;        // positions 1,3,5,...
+
+        long long even_count = 5; // digits: 0,2,4,6,8
+        long long odd_count = 4;  // digits: 2,3,5,7
+
+        // Fast exponentiation function
+        auto modPow = [&](long long base, long long exp) -> long long {
+            long long result = 1;
+            while (exp > 0) {
+                if (exp % 2 == 1) result = (result * base) % MOD;
+                base = (base * base) % MOD;
+                exp /= 2;
+            }
+            return result;
+        };
+
+        long long ans = (modPow(even_count, even_positions) * modPow(odd_count, odd_positions)) % MOD;
+        return ans;
+    }
+};
