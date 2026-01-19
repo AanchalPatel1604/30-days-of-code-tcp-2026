@@ -1,0 +1,50 @@
+class Solution {
+  public:
+
+    // Helper function to reverse a linked list
+    Node* reverse(Node* head) {
+        Node* prev = NULL;
+        Node* curr = head;
+
+        while (curr != NULL) {
+            Node* next = curr->next; // store next
+            curr->next = prev;       // reverse pointer
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
+    }
+
+    Node* addOne(Node* head) {
+        // Step 1: Reverse the list
+        head = reverse(head);
+
+        Node* curr = head;
+        int carry = 1; // start by adding 1
+
+        // Step 2: Add 1 and handle carry
+        while (curr != NULL) {
+            int sum = curr->data + carry;
+            curr->data = sum % 10;
+            carry = sum / 10;
+
+            // If no carry, we can stop early
+            if (carry == 0) break;
+
+            // If we reach the end and still have carry
+            if (curr->next == NULL && carry) {
+                curr->next = new Node(carry);
+                carry = 0;
+                break;
+            }
+
+            curr = curr->next;
+        }
+
+        // Step 3: Reverse the list back
+        head = reverse(head);
+
+        return head;
+    }
+};
